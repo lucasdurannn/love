@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Para Maria Isabel</title>
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <style>
+    body {
+      background-color: pink;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+    }
+    .button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    #nao {
+      position: absolute;
+    }
+    .hidden {
+      display: none;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; /* Permite que as imagens sejam exibidas em várias linhas */
+    }
+    .gallery img {
+      width: 200px; /* Ajuste o tamanho das imagens conforme desejado */
+      height: auto;
+      margin: 10px; /* Espaçamento entre as imagens */
+      position: relative;
+    }
+    .gallery p {
+      position: absolute;
+      top: 50%; /* Posiciona o texto no centro vertical da imagem */
+      left: 50%; /* Posiciona o texto no centro horizontal da imagem */
+      transform: translate(-50%, -50%); /* Centraliza o texto */
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao texto */
+    }
+    .agradecimento {
+      font-size: 24px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#nao").hover(
+        function() {
+          $(this).css("left", Math.random() * ($(window).width() - $(this).outerWidth()) + 'px');
+          $(this).css("top", Math.random() * ($(window).height() - $(this).outerHeight()) + 'px');
+        }
+      );
+
+      $("#sim").click(function() {
+        $("#resposta-sim").removeClass("hidden");
+        setTimeout(function(){
+          window.location.href = "https://www.youtube.com/watch?v=1Cw1ng75KP0&ab_channel=HeartVEVO";
+        }, 5000); // 5000 milissegundos = 5 segundos
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Quer sair amanhã comigo?</h1>
+    <button class="button" id="sim">Sim</button>
+    <button class="button" id="nao">Não</button>
+    <div id="resposta-sim" class="hidden">
+      <div class="gallery">
+        <img src="images\love.jpeg" alt="Image 1">
+        <img src="images\love1.jpeg" alt="Image 1">
+        <img src="images\love4.jpeg" alt="Image 4">
+      </div>
+      <p class="agradecimento">Obrigada por aceitar meu convite meu amor! 
+        <h3>Mal posso esperar para passar mais tempo ao seu lado.</h3> 
+        <h3>Você é muito especial para mim e estou muito feliz por termos esse momento juntos.</h3> 
+        <h1>EU TE AMO DEMAIS! 😍</h1>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
